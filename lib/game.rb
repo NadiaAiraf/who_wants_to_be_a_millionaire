@@ -11,6 +11,12 @@ class Game
     @current_question = random_question
   end
 
+  def return_answers
+    answers = @current_question.values[0][:wrong]
+    answers << @current_question.values[0][:correct]
+    answers.shuffle
+  end
+
   def random_question
     QUESTIONS.sample
   end
