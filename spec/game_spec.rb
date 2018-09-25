@@ -4,7 +4,7 @@ describe Game do
   describe 'give_question' do
     it 'returns a random question and answer from the list' do
       srand(123)
-      expect(subject.random_question).to eq({'the capital of croatia?' => {correct: 'zagreb',wrong: ['london','berlin','moscow']}})
+      expect(subject.random_question).to eq({'what is the highest mountain in the world?' => {correct: 'everest', wrong: ['kilimanjaro','fiji','k2']}})
     end
   end
 
@@ -22,6 +22,7 @@ describe Game do
 
   describe '#change_question' do
     it 'changes the current question instance variable' do
+      srand(124)
       answer = subject.current_question
       subject.change_question
       expect(subject.change_question).to_not eq answer
@@ -30,7 +31,8 @@ describe Game do
 
   describe '#return_answers' do
     it 'returns and array of all possible answers' do
-      expect(subject.return_answers).to eq ["kilimanjaro", "fiji", "everest", "k2"]
+      srand(123)
+      expect(subject.return_answers).to eq ["fiji", "everest", "k2", "kilimanjaro"]
     end
   end
 end

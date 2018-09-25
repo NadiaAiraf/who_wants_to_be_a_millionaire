@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game'
 
 class MillionaireGame < Sinatra::Base
   enable :sessions
@@ -13,6 +14,7 @@ class MillionaireGame < Sinatra::Base
   end
 
   get '/name' do
+    session[:game] = Game.new
     erb :play
   end
 
