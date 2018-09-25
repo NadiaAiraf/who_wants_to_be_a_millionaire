@@ -4,14 +4,14 @@ describe Game do
   describe 'give_question' do
     it 'returns a random question and answer from the list' do
       srand(123)
-      expect(subject.random_question).to eq({'what is the highest mountain in the world?' => {correct: 'everest', wrong: ['kilimanjaro','fiji','k2']}})
+      expect(subject.random_question).to eq("what is the capital of croatia?" => {:correct=>"zagreb", :wrong=>["london", "berlin", "moscow"]})
     end
   end
 
   describe '#answer_correct?' do
     it 'returns true if the correct answer is given' do
       srand(123)
-      expect(subject.answer_correct?('everest')).to eq true
+      expect(subject.answer_correct?('new york')).to eq true
     end
 
     it 'returns false if the wrong answer is given' do
@@ -38,7 +38,7 @@ describe Game do
   describe '#return_answers' do
     it 'returns and array of all possible answers' do
       srand(123)
-      expect(subject.return_answers).to eq ["fiji", "everest", "k2", "kilimanjaro"]
+      expect(subject.return_answers).to eq ["washington", "new york", "chicago", "miami"]
     end
   end
 end

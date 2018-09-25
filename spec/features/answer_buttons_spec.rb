@@ -4,9 +4,9 @@ feature 'answer_buttons' do
     visit '/'
     fill_in 'name', with: 'Aidan'
     click_button 'submit'
-    expect(page).to have_button 'k2'
-    expect(page).to have_button 'kilimanjaro'
-    expect(page).to have_button 'fiji'
-    expect(page).to have_button 'everest'
+    expect(page).to have_button 'new york'
+    expect(page).to have_button 'washington'
+    expect(page).to have_button 'chicago'
+    expect(page).to have_button 'miami'
   end
 end

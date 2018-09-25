@@ -16,7 +16,7 @@ feature 'play' do
     srand(123)
     visit '/'
     click_button 'submit'
-    click_button 'everest'
+    click_button 'new york'
     expect(page).to have_content 'Question number 2.'
   end
 
@@ -24,7 +24,7 @@ feature 'play' do
     srand(123)
     visit '/'
     click_button 'submit'
-    click_button 'k2'
+    click_button 'miami'
     expect(page).to have_content 'Game Over!'
   end
 end

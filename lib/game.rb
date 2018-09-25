@@ -1,10 +1,11 @@
-class Game
-  attr_reader :current_question, :current_answers, :question, :question_number
+require_relative 'questions'
 
-  QUESTIONS = [{'what is the highest mountain in the world?' => {correct: 'everest', wrong: ['kilimanjaro','fiji','k2']}},
-               {'what is the capital of croatia?' => {correct: 'zagreb',wrong: ['london','berlin','moscow']}}]
+class Game
+  attr_reader :current_question, :current_answers, :question, :question_number, :questions
+
   def initialize
     @question_number = 0
+    @questions = Questions.new.get_questions
     change_question
   end
 
@@ -22,7 +23,7 @@ class Game
 
   def random_question
     @question_number += 1
-    QUESTIONS.sample
+    @questions.shuffle!.pop
   end
 
   def answer_correct?(answer)
