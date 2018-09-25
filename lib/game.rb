@@ -5,9 +5,7 @@ class Game
                {'what is the capital of croatia?' => {correct: 'zagreb',wrong: ['london','berlin','moscow']}}]
   def initialize
     @question_number = 0
-    @question = random_question
-    @current_question = question.keys[0]
-    @current_answers = return_answers
+    change_question
   end
 
   def change_question
