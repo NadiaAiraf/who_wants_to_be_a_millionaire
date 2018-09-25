@@ -6,4 +6,12 @@ class MillionaireGame < Sinatra::Base
   get '/' do
     erb :index
   end
+
+  post '/play' do
+    redirect '/play'
+  end
+
+  get '/play' do
+    erb :play
+  end
 end
