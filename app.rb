@@ -7,8 +7,16 @@ class MillionaireGame < Sinatra::Base
     erb :index
   end
 
-  post '/play' do
+  post '/name' do
     session[:name] = params[:name]
+    redirect '/name'
+  end
+
+  get '/name' do
+    erb :play
+  end
+
+  post '/play' do
     redirect '/play'
   end
 

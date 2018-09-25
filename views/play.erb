@@ -1,3 +1,10 @@
-<h1>Contestant: <%= session[:name].capitalize %></h1>
+<h1>Contestant: <%= session[:name] %></h1>
 
 <h2>Question number 1.</h2>
+
+<form class="" action="/play" method="post">
+  <input type="submit" name="answer" value="answer1">
+  <input type="submit" name="answer" value="answer2">
+  <input type="submit" name="answer" value="answer3">
+  <input type="submit" name="answer" value="answer4">
+</form>
