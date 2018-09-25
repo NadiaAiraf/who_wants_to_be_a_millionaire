@@ -8,6 +8,7 @@ class MillionaireGame < Sinatra::Base
   end
 
   post '/play' do
+    session[:name] = params[:name]
     redirect '/play'
   end
 
