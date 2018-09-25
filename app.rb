@@ -19,10 +19,19 @@ class MillionaireGame < Sinatra::Base
   end
 
   post '/play' do
+    if session[:game].answer_correct?(params[:answer])
+    session[:game].change_question
     redirect '/play'
+    else
+      redirect '/gameover'
+    end
   end
 
   get '/play' do
     erb :play
+  end
+
+  get '/gameover' do
+    erb :gameover
   end
 end

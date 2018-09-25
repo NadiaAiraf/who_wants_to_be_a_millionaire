@@ -1,9 +1,10 @@
 class Game
-  attr_reader :current_question, :current_answers, :question
+  attr_reader :current_question, :current_answers, :question, :question_number
 
   QUESTIONS = [{'what is the highest mountain in the world?' => {correct: 'everest', wrong: ['kilimanjaro','fiji','k2']}},
                {'what is the capital of croatia?' => {correct: 'zagreb',wrong: ['london','berlin','moscow']}}]
   def initialize
+    @question_number = 0
     @question = random_question
     @current_question = question.keys[0]
     @current_answers = return_answers
@@ -22,6 +23,7 @@ class Game
   end
 
   def random_question
+    @question_number += 1
     QUESTIONS.sample
   end
 
