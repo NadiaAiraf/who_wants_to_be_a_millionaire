@@ -23,9 +23,15 @@ describe Game do
   describe '#change_question' do
     it 'changes the current question instance variable' do
       srand(124)
-      answer = subject.current_question
+      question = subject.current_question
       subject.change_question
-      expect(subject.change_question).to_not eq answer
+      expect(subject.change_question).to_not eq question
+    end
+    it 'changes the current answers array instance variable' do
+      srand(124)
+      answers = subject.current_answers
+      subject.change_question
+      expect(subject.change_question).to_not eq answers
     end
   end
 

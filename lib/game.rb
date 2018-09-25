@@ -11,7 +11,8 @@ class Game
 
   def change_question
     @question = random_question
-    @current_question = @question.keys[0]
+    @current_question = question.keys[0]
+    @current_answers = return_answers
   end
 
   def return_answers
