@@ -19,9 +19,10 @@ class MillionaireGame < Sinatra::Base
   end
 
   post '/play' do
+    redirect '/success' if session[:game].question_number == 16
     if session[:game].answer_correct?(params[:answer])
-    session[:game].change_question
-    redirect '/play'
+      session[:game].change_question
+      redirect '/play'
     else
       redirect '/gameover'
     end

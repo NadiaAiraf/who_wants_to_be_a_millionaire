@@ -4,6 +4,6 @@ feature 'game questions' do
     visit '/'
     fill_in 'name', with: 'Aidan'
     click_button 'submit'
-    expect(page).to have_content 'where is the statue of liberty'
+    expect(page).to have_content 'what US town id the famous 1881 shoot-out at the o.k corral take place?'
   end
 end
