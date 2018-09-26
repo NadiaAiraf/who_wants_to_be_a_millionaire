@@ -19,7 +19,7 @@ class MillionaireGame < Sinatra::Base
   end
 
   post '/play' do
-    redirect '/success' if session[:game].question_number == 16
+    redirect '/success' if session[:game].question_number == 15
     if session[:game].answer_correct?(params[:answer])
       session[:game].change_question
       redirect '/play'
@@ -34,5 +34,9 @@ class MillionaireGame < Sinatra::Base
 
   get '/gameover' do
     erb :gameover
+  end
+
+  get '/success' do
+    erb :success
   end
 end

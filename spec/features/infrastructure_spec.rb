@@ -28,3 +28,34 @@ feature 'play' do
     expect(page).to have_content 'Game Over!'
   end
 end
+
+feature 'success page' do
+  scenario 'you have answered 15 questions it should return the success page' do
+    srand(123)
+    # allow(Game).to receive(:question_number).and_return(15)
+    visit '/'
+    click_button 'submit'
+    click_button 'tombstone'
+    click_button 'close encounters of the third kind'
+    click_button 'around their throat'
+    click_button 'cupid'
+    click_button 'zagreb'
+    click_button 'clothes horse'
+    click_button 'beep beep'
+    click_button 'yuri gagarin'
+    click_button 'reykjavik'
+    click_button 'everest'
+    click_button 'semper fidelius'
+    click_button 'leg'
+    click_button 'pig latin'
+    click_button 'polka'
+    click_button 'august'
+    expect(page).to have_content 'Congratulations! you have won'
+  end
+  scenario 'there is a success page' do
+    srand(123)
+    # allow(Game).to receive(:question_number).and_return(15)
+    visit '/success'
+    expect(page).to have_content 'Congratulations! you have won'
+  end
+end
