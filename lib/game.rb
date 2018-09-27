@@ -43,4 +43,8 @@ class Game
       Questions.new.submit('num_wrong3',current_question)
     end
   end
+
+  def return_percentages
+    Questions.new.return_percent(current_question)
+  end
 end

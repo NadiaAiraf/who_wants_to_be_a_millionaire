@@ -17,3 +17,10 @@
 <form class="" action="/success" method="get">
   <input type="submit" value="walk away">
 </form>
+
+<ul>
+  Ask the audience
+  <% session[:game].return_percentages.each do |k,v| %>
+  <li> <%= k %>: % <%= v %></li>
+  <% end %>
+</ul>

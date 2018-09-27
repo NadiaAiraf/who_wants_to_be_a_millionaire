@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/game'
 require './lib/winnings'
+require './lib/ask_audience'
 
 class MillionaireGame < Sinatra::Base
   enable :sessions
