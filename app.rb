@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/game'
+require './lib/winnings'
 
 class MillionaireGame < Sinatra::Base
   enable :sessions
@@ -10,6 +11,7 @@ class MillionaireGame < Sinatra::Base
 
   post '/name' do
     session[:name] = params[:name]
+    session[:winnings] = Winnings.new
     redirect '/name'
   end
 
@@ -19,6 +21,7 @@ class MillionaireGame < Sinatra::Base
   end
 
   post '/play' do
+    session[:game].submit_answer(params[:answer])
     redirect '/success' if session[:game].question_number == 15
     if session[:game].answer_correct?(params[:answer])
       session[:game].change_question

@@ -4,11 +4,16 @@
 
 <h3><%= session[:game].current_question %></h3>
 
-<h3>this question is for £<%= session[:game].winnings[session[:game].question_number-1] %> </h3>
+<h3>this question is for £</h3>
 
 <form class="" action="/play" method="post">
   <input type="submit" name="answer" value="<%= session[:game].current_answers[0] %>">
   <input type="submit" name="answer" value="<%= session[:game].current_answers[1] %>">
   <input type="submit" name="answer" value="<%= session[:game].current_answers[2] %>">
   <input type="submit" name="answer" value="<%= session[:game].current_answers[3] %>">
+</form>
+
+<br><br>
+<form class="" action="/success" method="get">
+  <input type="submit" value="walk away">
 </form>

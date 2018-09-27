@@ -11,4 +11,11 @@ class Questions
       {x["question"] => { correct: x["answer"], wrong: [x["wrong1"],x["wrong2"],x["wrong3"]]}}
     end
   end
+
+  def submit(answer,question)
+    p answer
+    a = @data.exec("select #{answer} from questions where question='#{question.gsub("'","''")}'").values[0][0].to_i
+    a += 1
+    @data.exec("update questions set #{answer}=#{a} where question='#{question.gsub("'","''")}'")
+  end
 end
