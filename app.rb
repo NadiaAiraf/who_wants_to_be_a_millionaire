@@ -11,6 +11,8 @@ class MillionaireGame < Sinatra::Base
   end
 
   post '/name' do
+    p params
+    session[:ask] = AskAudience
     session[:name] = params[:name]
     session[:winnings] = Winnings.new
     redirect '/name'

@@ -19,8 +19,7 @@
 </form>
 
 <ul>
-  Ask the audience
-  <% session[:game].return_percentages.each do |k,v| %>
-  <li> <%= k %>: % <%= v %></li>
+  <% AskAudience.answer_count(session[:game].current_question).each do |array| %>
+  <li> <%= array[0] %>: % <%= array[1].to_i*100/AskAudience.sum_of_answers(session[:game].current_question) %></li>
   <% end %>
 </ul>
